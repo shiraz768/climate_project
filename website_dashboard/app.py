@@ -253,7 +253,7 @@ except Exception:
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/data.csv")
+    df = pd.read_csv("../data/temperatures_clean.csv")
     df['dt'] = pd.to_datetime(df['dt'], errors='coerce')
     df = df.dropna(subset=['dt'])
     df['year'] = df['dt'].dt.year
